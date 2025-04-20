@@ -1,0 +1,24 @@
+<!-- item.component.html -->
+<li class="list-group-item d-flex justify-content-between align-items-center">
+    <div>
+      {{ item.name }} -
+      <span class="badge" [class.bg-success]="item.purchased" [class.bg-secondary]="!item.purchased">
+        {{ item.purchased ? 'Acheté' : 'Non acheté' }}
+      </span>
+    </div>
+    <div>
+      <button
+        class="btn btn-success btn-sm me-2"
+        (click)="togglePurchased()"
+      >
+        {{ item.purchased ? 'Marquer non acheté' : 'Marquer acheté' }}
+      </button>
+      <button
+        class="btn btn-danger btn-sm"
+        (click)="removeItem()"
+      >
+        Supprimer
+      </button>
+    </div>
+  </li>
+  
