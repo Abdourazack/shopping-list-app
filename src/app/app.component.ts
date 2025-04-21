@@ -5,7 +5,7 @@ import { ShoppingListComponent } from './components/shopping-list/shopping-list.
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ShoppingListComponent,], // ❌ Enlève FilterPipe
+  imports: [ShoppingListComponent,], 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
