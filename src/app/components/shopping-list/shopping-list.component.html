@@ -1,44 +1,43 @@
 <div class="container mt-4">
-    <h2 class="text-center mb-4">Ma Liste de Courses</h2>
-  
-    <!-- Zone de recherche -->
-    <div class="mb-4 row g-2 align-items-center">
-      <div class="col-md-9">
-        <div class="input-group">
-          <span class="input-group-text">
-            <i class="bi bi-search"></i> <!-- Icône Bootstrap de loupe -->
-          </span>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Rechercher un article..."
-            [(ngModel)]="searchTerm" />
-        </div>
-      </div>
-    </div>
-  
-    <!-- Zone d'ajout -->
-    <div class="mb-4 row g-2 align-items-center">
-      <div class="col-md-9">
+  <h2 class="text-center mb-4">Ma Liste de Courses</h2>
+
+  <!-- Zone de recherche avec icône loupe -->
+  <div class="mb-4 row g-2 align-items-center">
+    <div class="col-md-9">
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="bi bi-search"></i> <!-- Icône Bootstrap Icons -->
+        </span>
         <input
           type="text"
           class="form-control"
-          placeholder="Ajouter un article"
-          [(ngModel)]="newItemName" />
-      </div>
-      <div class="col-md-3 text-md-start text-center">
-        <button class="btn btn-primary w-100" (click)="addItem()">Ajouter</button>
+          placeholder="Rechercher un article..."
+          [(ngModel)]="searchTerm" />
       </div>
     </div>
-  
-    <!-- Liste des éléments avec ItemComponent -->
-    <ul class="list-group list-unstyled">
-      <app-item
-        *ngFor="let item of items | filter:searchTerm"
-        [item]="item"
-        (onTogglePurchased)="togglePurchased(item)"
-        (onRemove)="removeItem(item)">
-      </app-item>
-    </ul>
   </div>
-  
+
+  <!-- Zone d'ajout -->
+  <div class="mb-4 row g-2 align-items-center">
+    <div class="col-md-9">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ajouter un article"
+        [(ngModel)]="newItemName" />
+    </div>
+    <div class="col-md-3 text-md-start text-center">
+      <button class="btn btn-primary w-100" (click)="addItem()">Ajouter</button>
+    </div>
+  </div>
+
+  <!-- Liste des éléments avec ItemComponent -->
+  <ul class="list-group list-unstyled">
+    <app-item
+      *ngFor="let item of items | filter:searchTerm"
+      [item]="item"
+      (onTogglePurchased)="togglePurchased(item)"
+      (onRemove)="removeItem(item)">
+    </app-item>
+  </ul>
+</div>
